@@ -74,3 +74,8 @@ elif food == '도시락':
         print("구매되었습니다.")
     else:
         print("금액이 부족합니다.")
+
+# 구구단 만들기 _ 4단
+print('4단')
+for i in range(1, 10):
+    print(f' 4 x {i} = {4*i}')
