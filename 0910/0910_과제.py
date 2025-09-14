@@ -1,26 +1,42 @@
+# ========================================
+# 실습 문제 1: 영화 정보 출력
+# ========================================
 
-# 실습1. 영화 정보 출력하기
+# 영화 정보를 변수에 저장
+title = "Inception"                    # 영화 제목
+director = "Christopher Nolan"         # 감독명
+year = 2010                           # 개봉연도
+genre = "Sci-Fi"                      # 장르
 
-title = "Inception"
-director = "Christopher Nolan"
-year = 2010
-genre = "Sci-Fi"
+# f-string을 사용하여 영화 정보 출력
+print(f"영화 제목: {title}")
+print(f"감독: {director}")
+print(f"개봉연도: {year}")
+print(f"장르: {genre}")
 
-print(f"Title: {title} Director: {director} Year: {year} Genre: {genre}")
+# 한 줄로 모든 정보 출력
+print(f"Title: {title}, Director: {director}, Year: {year}, Genre: {genre}")
 
+# ========================================
+# 실습 문제 2: 자기소개 출력 (여러 줄 문자열)
+# ========================================
 
-# 실습2. 자기소개 하기
+# 개인 정보를 변수에 저장
+person_name = "juyeon"                 # 이름
+person_age = 24                      # 나이
+person_mbti = "ESTJ"                  # MBTI 성격유형
 
-name = "서주연"
-age = 24
-MBTI = "ESTJ"
+# 여러 줄 문자열(""")과 f-string 조합 사용
+introduction = f"""안녕하세요!
+제 이름은 {person_name}이고,
+{person_age}살입니다.
+제 MBTI는 {person_mbti}예요.
+만나서 반갑습니다!"""
 
-print(f"안녕하세요\n제 이름은 {name}이고\n{age}살입니다.\n제 MBTI는 {MBTI}에요.")
+print(introduction)
 
-print(f"""안녕하세요
-제 이름은 {name}이고
-{age}살입니다.
-제 MBTI는 {MBTI}에요.""")
+# 한 줄로도 출력 가능
+print(f"안녕하세요! 제 이름은 {person_name}, {person_age}살, 제 MBTI는 {person_mbti}예요.")
 
 
 # 실습 3 대학생의 용돈관리
