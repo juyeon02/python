@@ -112,3 +112,15 @@ while i < 15:
 
 else:
     print('정상종료 되었습니다. ')
+
+
+# 중첩 while문 구구단
+
+i = 2
+while i < 10:
+    j = 1
+    while j < 10:
+        print(f'{i} ㅌ{j}'={i * j})
+        j += 1  # 수 증가
+
+    i += 1  # 단 증가

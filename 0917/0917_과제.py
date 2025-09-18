@@ -115,7 +115,7 @@ while True:
         print("입력한 숫자보다는 커요.")
     else:
         print(f"{n}번 만에 정답을 맞췄습니다!")
-        break'''
+        break
 
 
 # 문제2. 유효한 나이만 평균 내기
@@ -127,7 +127,7 @@ sum_age = 0
 while times < 5:
     age = int(input('나이를 입력하세요: '))
 
-    if 0 <= age <= 120:
+    if 0 < age <= 120:
         sum_age += age
         times += 1
 
@@ -136,3 +136,46 @@ while times < 5:
 else:
     avg = sum_age // 5
     print(f'"총합: "{sum_age}, "평균: " {avg}')
+
+
+# 문제1. 로그인 시스템 구현
+
+id = "juyeon"
+key = 0000
+
+
+while True:
+
+    ID = (input("ID를 입력하세요: "))
+    KEY = int(input("비밀번호를 입력하세요: "))
+
+    if id != ID:
+        print("ID가 존재하지 않습니다")
+
+    if key != KEY:
+        print("비밀번호가 틀렸습니다.")
+
+else:
+    print("로그인 성공! ")
+break
+'''
+
+
+id = "juyeon"
+key = 0000
+
+while True:
+    ID = input("ID를 입력하세요: ")
+    KEY = int(input("비밀번호를 입력하세요: "))
+
+    if id == ID and key == KEY:
+        print("로그인 성공!")
+        break
+
+    while True:
+        if id != ID:
+            print("ID가 존재하지 않습니다.")
+
+        elif key != KEY:
+            print("비밀번호가 틀렸습니다.")
+        break
