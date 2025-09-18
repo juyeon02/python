@@ -63,7 +63,7 @@ def calculate_area(width, height):
 
     parameters:
         width (float) : 직사각형의 너비
-        height (float) : 직사각형의 높이 
+        height (float) : 직사각형의 높이
 
     return:
         float : 직사각형의 넓이
@@ -202,3 +202,40 @@ greet('김철수')
 # 여러 기본값
 def create_profile(name, age=25, city='서울', job='개발자'):
     return {'name': name, 'age': age, 'city', city, job}
+
+# 가변 위치 인자(*args)
+
+
+def sum_all(*numbers):
+    total = 0
+    for num in numbers:
+        total += num
+    return total
+
+
+print(sum_all(1, 2, 3))
+
+# 가변 키워드 인자**kwargs
+
+
+def print_info(**user):
+    # 키워드 인자를 딕셔너리로 받습니다.
+    for key, value in user.items():
+        print(f'{key}{value}')
+
+
+print_info(Name='김철수', age=20, city='서울')
+
+
+def create_student(**info):
+    '''학생 정보를 생성합니다'''
+    student = {
+        "name": info.get('name', '이름없음')
+        "age": info.get('age', '20')
+        "grade": info.get('grade', '1')
+        "subjects": info.get('subjects', '[]')
+    }
+    return student
+
+
+student1 = create_student(name='김철수')
