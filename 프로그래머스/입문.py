@@ -1,4 +1,4 @@
-'''array = [1, 2, 3, 3, 3, 4]
+array = [1, 2, 3, 3, 3, 4]
 
 num = []   # 이미 센 숫자 저장
 for i in array:
@@ -6,7 +6,6 @@ for i in array:
         count = array.count(i)
         num.append(i)        # 센 숫자 기록
         print(max(num))
-
 
 
 array = [1, 2, 3, 3, 3, 4, 4, 4]
@@ -63,30 +62,31 @@ for num in array:
 if len(mode) == 1:
     print(mode)
 else:
-    print(-1)'''
+    print(-1)
 
 
-'''array = [1, 2, 3, 3, 3, 4, 4]
+array = [1, 2, 3, 3, 3, 4, 4]
 
 stack = []
 
 for i in array:
     nums = array.append.count(i)
-    print(nums)'''
-'''    if array.count(i) == i not in nums:
+    print(nums)
+    if array.count(i) == i not in nums:
         stack.append(i)
         print(stack)
-'''
+
 
 
 array = [1, 2, 3, 3, 3, 4, 4]
 
 # 이미 센 숫자를 기록할 리스트
-checked = []
+num = []
 
-for num in array:
-    if num not in checked:           # 처음 보는 숫자만 세기
-        count = array.count(num)     # num이 몇 번 나오는지 세기
-        # 숫자와 개수 출력
-        checked.append(num)          # 이미 센 숫자 기록
-        print(num, ":", count)
+for i in array:
+    if i not in num:           # 처음 보는 숫자만 세기
+        count = array.count(i)     # num이 몇 번 나오는지 세기
+        num.append(i)          # 이미 센 숫자 기록
+
+        
+        print(i, ":", count)          # 숫자와 개수 출력 
