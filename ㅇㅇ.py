@@ -43,6 +43,7 @@ while True:
 '''
 
 
+from abc import ABC, abstractmethod
 9/22
 
 # 문제1. 책 클래스 만들기
@@ -222,3 +223,37 @@ rect.area()
 print("\n=== Triangle 정보 ===")
 tri.printInfo()
 tri.area()
+
+
+# 1. 추상 클래스 정의
+
+class Payment(ABC):
+
+    @abstractmethod
+    def pay(self, amount):
+        pass   # 추상 메서드: 구현은 자식 클래스에서
+
+# 2. CardPayment 클래스
+
+
+class CardPayment(Payment):
+
+    def pay(self, amount):
+        print(f"카드로 {amount}원을 결제합니다.")
+
+# 3. CashPayment 클래스
+
+
+class CashPayment(Payment):
+
+    def pay(self, amount):
+        print(f"현금으로 {amount}원을 결제합니다.")
+
+
+#
+
+card = CardPayment()
+card.pay(5000)   # 출력: 카드로 5000원을 결제합니다.
+
+cash = CashPayment()
+cash.pay(3000)   # 출력: 현금으로 3000원을 결제합니다.
