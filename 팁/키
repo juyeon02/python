@@ -1,3 +1,17 @@
 ctrl + D : 찾기
 
 python --version
+
+ctrl + / => #
+ctrl + alt + 위 아래 화살표 : 행을 다중선택
+
+
+alt + 위 아래 화살표 : 행 이동
+
+ctrl + h : 파일 내 동일한 변수 명 한번에 수정
+
+alt + shifr + 위 아래 : 문장을 위 아래로 복사 
+
+
+
+
