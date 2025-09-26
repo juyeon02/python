@@ -38,3 +38,22 @@ try:
 
 except:
     print('오류')
+
+
+try:
+    risky_code()
+except:  # 모든 예외를 잡음 (위험!!)
+    pass
+
+
+try:
+    risky_code()
+except ValueError:  # 특정 예외만
+    print('값 오류 발생')
+except Exception as a:
+    '다른 예외는 로깅'
+
+
+finally:
+    '무조건 실행되는 코드 '
+    # print(끝났습니다. )
