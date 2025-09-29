@@ -1,4 +1,4 @@
-array = [1, 2, 3, 3, 3, 4]
+'''array = [1, 2, 3, 3, 3, 4]
 
 num = []   # 이미 센 숫자 저장
 for i in array:
@@ -90,3 +90,32 @@ for i in array:
 
         
         print(i, ":", count)          # 숫자와 개수 출력 
+'''
+
+# 숨어있는 숫자의 덧셈(2)
+
+
+'''def solution(my_string):
+    string = list(my_string)
+    ch = []
+
+    for i in string:
+        if i == str:
+            ch.append("")
+        else:
+            ch.append(i)
+            if 
+
+
+print(solution("aAb1B2cC34oOp"))   # 37'''
+
+
+# 직사각형 넓이 구하기
+def solution(dots):
+    dots.sort()
+    width_1 = dots[0]
+    width_2 = dots[3]
+    return abs((width_1[0]-width_2[0])*(width_1[1]-width_2[1]))
+
+
+print(solution([[1, 1], [2, 1], [2, 2], [1, 2]]))
