@@ -205,9 +205,11 @@ np.max(arr)        # 최대값
 np.argmin(arr)     # 최소값 인덱스
 np.argmax(arr)     # 최대값 인덱스
 np.ptp(arr)        # 최대값 - 최소값
+# 편차 배열 : arr - np.mean(arr)
 
 print('누적 합', np.cumsum(arr))  # [ 1  3  6 10 15 21 28 36 45]
 print('누적 곱', np.cumprod(arr))  # [        1         2         6        24       120      720     5040    40320   362880]
+
 
 
 matrix = np.array([[1, 2, 3],
