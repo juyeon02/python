@@ -1,4 +1,4 @@
-def solution(number):
+'''def solution(number):
     answer = 0
     n = len(number)
     
@@ -11,4 +11,21 @@ def solution(number):
     return answer
 
 
-print(solution([-2, 3, 0, 2, -5]))
+print(solution([-2, 3, 0, 2, -5]))'''
+
+
+def solution(food):
+    num = sum(i for i in food)
+    
+    answer = ''
+    
+    for i in food:
+        
+    
+    
+    for i in range(
+    
+    return answer
+
+print(solution([1, 3, 4, 6]))
+    # [1, 3, 4, 6]	"1223330333221"
