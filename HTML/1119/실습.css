@@ -1,0 +1,33 @@
+table {
+    border-collapse: collapse;
+    width: 300px;
+    font-family: sans-serif;
+}
+
+td {
+    padding: 8px 12px;
+    border: 1px solid black;
+}
+
+tr:nth-child(even) {
+    background: grey;
+}
+
+tr:first-child td {
+    font-weight: 700;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tr:hover {
+    background: #eaf1ff;
+    transition: 0.2s;
+}
+
+td:first-child {
+    font-weight: bold;
+    color: brown;
+    text-align: center;
+}
