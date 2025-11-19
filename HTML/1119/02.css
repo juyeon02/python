@@ -1,88 +1,18 @@
-header {
-    text-align: center;
-    padding: 80px 20px;
-    background: #4C6EF5;
-    color: white;
-    border-bottom-left-radius: 40px;
-    border-bottom-right-radius: 40px;
+#main-header {
+  background-color: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 20px;
 }
-
-main {
-    width: 85%;
-    max-width: 900px;
-    margin: -40px auto 0;  /* 위로 살짝 끌어올려서 겹치게 */
-}
-
-section {
-    background: white;
-    padding: 25px 30px;
-    margin-bottom: 25px;
-    border-radius: 15px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+#main-header h1 {
+  font-size: 36px;
+  margin: 0;
 }
 
 footer {
-    text-align: center;
-    padding: 20px 0;
-    font-size: 0.85em;
-    color: #666;
-    border-top: 1px solid #e5e5e5;
-    margin-top: 40px;
+  background-color: #34496e;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 30px;
 }
-
-
-
-/* css 선택자 심화 */
-
-/* 복합 선택자 */
-/* 그룹 선택자( 여러 요소 동일 스타일 */
-h2, h3 {
-    color: navy
-}
-
-p, li, span {
-    background-color: #4C6EF5;
-}
-
-/* 자손과 자식 선택자 */
-/*  자손 선택자 */
-/* 모든 하위 요소 선택 */
-.container p {
-    color: #666;
-}
-
-/* 자식 선택자 */
-/* 직계 자식만 선택  */
-.container > p {
-    color: red;
-}
-
-/* 모든 li 선택 */
-.menu li {
-    color:aquamarine
-}
-
-h2 + p {
-    font-weight:bold;
-    /* 첫 번째 문단만 */
-} 
-
-/*  일반 형제 선택자 */
-/*  이후의 모든 형제 요소 선택 */
-h2 ~ p {
-    color: beige;
-    /*  모든 문단 선택  */
-}
-
-/*  속성 선택자 */
-/*  속성 존재 여부  */
-input[type] {
-    border: 2px solid gray;
-    /* border: 2px solid gray;   = 네모박스*/
-    /* border: 2px dashed gray;   = 점선박스*/
-}
-
-/* 가상 클래스 선택자*/
-/*  방문하지 않은 링크 */
-/*  순서 중요 : link -> visited -> hover -> active */
-a: link
