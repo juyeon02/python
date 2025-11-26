@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="main-title">환영합니다!</h1>
+    <p class="highlight"> 첫 번째</p>
+    <p>두 번째</p>  
+    <p class="highlight">세 번째</p>
+
+    <div class="container">
+        <ul>
+            <li>항목 1</li>
+            <li>항목 2</li>
+            <li>항목 3</li>
+        </ul>
+    </div>   
+
+    <script>
+
+        let pCount = document.querySelectorAll('p').length;
+        console.log({pCount})
+        let highlight = document.querySelectorAll('.highlight')
+        console.log({highlight})
+        let firstP = document.querySelector('p').textContent
+        console.log({firstP})
+
+        let allLi = document.querySelectorAll('.container li')
+        console.log({allLi})
+
+        let secondLi = document.querySelector(".container li:nth-child(2)");
+        console.log(secondLi.textContent);
+
+        let lastLi = document.querySelector(".container li:last-child");
+        console.log(lastLi.textContent);
+</script>
+    </script>
+
+</body>
+</html>
+
+
+
+
+

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> 안녕하세요</h1>
+    <p> DOM 조작 배우기</p>
+    <div id="content">
+        <p> dd </p>
+    </div>
+
+    <!-- <img scr="" -->
+
+    <script> 
+        // dom 조작
+        // textContent 모든 텍스트( 숨김포함) - 권장
+        // innerHTML html 태그 포함. - 보안 주의 : 
+
+        let p = document.querySelector('p');
+        console.log(p.textContent);
+
+        p.textContent = '반갑습니다.!';
+
+        let div = document.querySelector('#content');
+        console.log(div.textContent)
+
+        // html 포함하여 설정
+        div.innerHTML = "<strong> 굵은 글씨 </strong>";
+
+
+    </script>
+</body>
+</html>

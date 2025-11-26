@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id = 'parent'>
+        <h2>child1</h2>
+        <p id=" 'target"> child2 (target)</p>
+        <span> child3</span>
+    </div>
+
+    <script> 
+       // target 아이디 찾음
+       const target = document.querySelector('#target');
+       console.log(target);
+       
+    //    부모요소
+       console.log(target.parentElement); 
+    </script>
+</body>
+</html>
