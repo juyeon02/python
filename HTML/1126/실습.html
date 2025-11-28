@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Change</title>
+</head>
+<body>
+
+    <img id="myImg" src="images.jpg" alt="고양이 이미지" width="300">
+
+    
+
+    <br><br>
+
+    <button onclick="cat()">고양이 이미지</button>
+    <button onclick="dog()">강아지 이미지</button>
+
+    <br><br>
+
+    <h2>할 일 리스트</h2>
+    
+    <input type="text" id="todoInput" placeholder="할 일을 입력하세요">
+    <button onclick="todo()">추가</button>
+
+    <ul id="todoList" ></ul>
+
+    <style>
+    ul {
+        list-style: none;
+    }
+    </style>
+
+    <script>
+        function cat() {
+            let img = document.querySelector('#myImg');
+            img.src = "images.jpg";
+            img.alt = "고양이 이미지";
+        }
+
+        function dog() {
+            let img = document.querySelector('#myImg');
+            img.src = "강아지.jpg";
+            img.alt = "강아지 이미지";
+        }
+
+
+        function todo() {
+        let input = document.querySelector('#todoInput');
+        let list = document.querySelector('#todoList');
+
+        let li = document.createElement('li');
+
+        let checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+
+        let text = document.createTextNode(" " + input.value);
+
+        li.append(checkbox);
+        li.append(text);
+
+        list.append(li);
+    }
+    </script>
+</body>
+</html>
+
+
+

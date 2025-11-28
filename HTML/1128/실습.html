@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>1128 과제</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      h2 {
+        margin-top: 30px;
+      }
+      .box {
+        border: 1px solid #ccc;
+        padding: 15px;
+        margin-top: 10px;
+        display: inline-block;
+      }
+      .time-display {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+        display: block;
+      }
+      button {
+        margin-right: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ========================================= -->
+    <!-- 과제 1. 현재 시간을 1초마다 업데이트하는 디지털 시계 -->
+    <!-- ========================================= -->
+    <h2>과제 1: 시계</h2>
+    <div id="clock">00:00:00</div>
+
+    <!-- ========================================= -->
+    <!-- 과제 2. 시작/정지/초기화 스톱워치 -->
+    <!-- ========================================= -->
+    <h2>과제2: 스톱워치</h2>
+    <div id="display">00:00:00</div>
+    <button id="startBtn">시작</button>
+    <button id="stopBtn">정지</button>
+    <button id="resetBtn">초기화</button>
+
+    <!-- ========================================= -->
+    <!-- 과제 3. N초 뒤 알림 시스템 -->
+    <!-- ========================================= -->
+    <h2>과제 3: 알림 시스템</h2>
+    <div class="box">
+      <label>
+        N초 후 알림:
+        <input type="number" id="alertSeconds" min="1" value="5" />
+      </label>
+      <button id="btnAlert">알림 설정</button>
+      <div id="alertMessage"></div>
+    </div>
+
+    <script>
+      // 과제 1: 디지털 시계
+      function updateClock() {
+        const now = new Date(); // 현재 시간 객체
+
+        let h = now.getHours(); // 시
+        let m = now.getMinutes(); // 분
+        let s = now.getSeconds(); // 초
+
+        // 두글자로 맞추고. 비어있으면 앞글자를 0으로 채우겠다
+        h = String(h).padStart(2, "0");
+        m = String(m).padStart(2, "0");
+        s = String(s).padStart(2, "0");
+
+        const clock = document.querySelector("#clock");
+        clock.textContent = `${h}:${m}:${s}`;
+      }
+
+      // 처음 한 번 바로 실행 , 1초마다 업데이트
+      updateClock();
+      setInterval(updateClock, 1000);
+
+      // 과제 2: 스톱워치
+      let startTime = 0; // 시작된 시점
+      let elapsedTime = 0; //경과된 시간
+      let intervalId = null; // 인터벌 아이디
+      let isRunning = false; // 실행 중
+
+      const display = document.querySelector("#display");
+      const startBtn = document.querySelector("#startBtn");
+      const stopBtn = document.querySelector("#stopBtn");
+      const resetBtn = document.querySelector("#resetBtn");
+
+      const updateDisplay = () => {
+        const currentTime = Date.now();
+        elapsedTime = currentTime - startTime;
+
+        const totalSeconds = Math.floor(elapsedTime / 1000);
+        const minutes = Math.floor(totalSeconds / 60);
+        const seconds = totalSeconds % 60;
+        const milliseconds = Math.floor((elapsedTime % 1000) / 10);
+
+        display.textContent =
+          `${String(minutes).padStart(2, "0")}:` +
+          `${String(seconds).padStart(2, "0")}:` +
+          `${String(milliseconds).padStart(2, "0")}:`;
+      };
+
+      startBtn.addEventListener("click", () => {
+        if (!isRunning) {
+          startTime = Date.now() - elapsedTime; // 11:10:10 - 0
+          intervalId = setInterval(updateDisplay, 10);
+          isRunning = true;
+        }
+      });
+
+      stopBtn.addEventListener("click", () => {
+        if (isRunning) {
+          clearInterval(intervalId);
+          isRunning = false;
+        }
+      });
+
+      resetBtn.addEventListener("click", () => {
+        clearInterval(intervalId);
+        elapsedTime = 0;
+        isRunning = false;
+        display.textContent = "00:00:00";
+      });
+    </script>
+
+    <script>
+      function updateClock() {
+        const now = new Date();
+        const hours = String(now.getHours()).padStart(2, "0"); // 시
+        const minutes = String(now.getMinutes()).padStart(2, "0"); // 분
+        const seconds = String(now.getSeconds()).padStart(2, "0"); // 초
+
+        const clock = document.querySelector("#clock");
+        clock.textContent = `${hours}:${minutes}:${seconds}`;
+      }
+      // 즉시 실행
+      updateClock();
+
+      setInterval(updateClock, 1000);
+
+      // -----------------------------------------
+      // 과제 3: N초 후 알림 시스템
+      // -----------------------------------------
+      const alertInput = document.getElementById("alertSeconds");
+      const btnAlert = document.getElementById("btnAlert");
+      const alertMessage = document.getElementById("alertMessage");
+
+      btnAlert.addEventListener("click", function () {
+        const seconds = Number(alertInput.value);
+
+        if (!seconds || seconds <= 0) {
+          alert("1초 이상을 입력해 주세요!");
+          return;
+        }
+
+        // alertMessage.textContent = `${seconds}초 후에 알림이 울립니다...`;
+
+        setTimeout(function () {
+          alert(`${seconds}초가 지났습니다!`);
+          alertMessage.textContent = `${seconds}초 알림 완료!`;
+        }, seconds * 1000); // N초 후 실행
+      });
+    </script>
+  </body>
+</html>
