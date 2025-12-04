@@ -165,6 +165,41 @@
           alertMessage.textContent = `${seconds}초 알림 완료!`;
         }, seconds * 1000); // N초 후 실행
       });
+
+      function randomPromise() {
+        return new Promise((resolve, reject) => {
+          const success = Math.random() < 0.5;
+
+          // 1초 지연
+          setTimeout(() => {
+            if (success) {
+              resolve("성공");
+            } else {
+              reject("실패");
+            }
+          }, 1000);
+        });
+      }
+
+      // Promise 실행 및 결과 처리
+      randomPromise()
+        .then((result) => {
+          console.log(result);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+
+    
+        // FETCH API
+        fetch("https://jsonplaceholder.typicode.com/users")
+          .ten((Response)=>{
+            return Response.json();
+          })
+          .then((data)=>{
+            return response.jsone();
+          })
+
     </script>
   </body>
 </html>
