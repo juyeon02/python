@@ -13,20 +13,26 @@ void setup() {
 
 void loop() {
   digitalWrite(TRIG, HIGH);
-  digitalWrite(LED, HIGH);
-  digitalWrite(PIEZO, HIGH);
-  delay(1000);
+  delay(10);
 
   digitalWrite(TRIG, LOW);
-  digitalWrite(LED, LOW);
-  digitalWrite(PIEZO, LOW);
+
   float duration = pulseIn(ECHO, HIGH);
   float distance = ((34000*duration)/1000000)/2;
   Serial.print(distance);
   Serial.println("cm");
-  delay(100);
+  delay(10);
 
-  if (ECHO < 12)
+  if (distance < 12){
+    digitalWrite(LED, HIGH);
+    digitalWrite(PIEZO, HIGH);
+    delay(100);
+    digitalWrite(LED, LOW);
+    digitalWrite(PIEZO, LOW);
+    delay(10);
+
+  }
+  
 
 
 
