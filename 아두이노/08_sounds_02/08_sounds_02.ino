@@ -29,11 +29,8 @@ void loop() {
     delay(100);
     digitalWrite(LED, LOW);
     digitalWrite(PIEZO, LOW);
-    delay(10);
+    delay(100);
 
   }
-  
-
-
 
 }
